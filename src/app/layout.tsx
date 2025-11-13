@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AppProvider } from "@/contexts/AppContext";
+import PwaRegister from "@/components/PwaRegister";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   title: "Motiva - A tua dose diária de motivação",
   description: "Frases motivacionais para o teu dia a dia",
   manifest: "/manifest.webmanifest",
-  themeColor: "#5B4BFF",
+  themeColor: "#7B61FF",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -34,8 +35,10 @@ export default function RootLayout({
     <html lang="pt">
       <head>
         <link rel="manifest" href="/manifest.webmanifest" />
-        <meta name="theme-color" content="#5B4BFF" />
-        <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+        <meta name="theme-color" content="#7B61FF" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -43,6 +46,7 @@ export default function RootLayout({
         <AppProvider>
           {children}
         </AppProvider>
+        <PwaRegister />
       </body>
     </html>
   );
