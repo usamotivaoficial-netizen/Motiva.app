@@ -1,11 +1,9 @@
-const CACHE_NAME = 'motiva-v1';
+const CACHE_NAME = 'motiva-v2';
 const STATIC_ASSETS = [
   '/',
   '/manifest.webmanifest',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png',
-  '/icons/maskable-192.png',
-  '/icons/maskable-512.png',
+  '/icons/motiva-icon-192.png',
+  '/icons/motiva-icon-512.png',
 ];
 
 // Install event - cache static assets
